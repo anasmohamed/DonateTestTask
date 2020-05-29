@@ -46,15 +46,12 @@ class DonateInteractor {
             do {
                 
                 let json = JSON(response.data!)
-                print(json)
-                let targetAmount = json["ikhair"]["country"].intValue
-                let targetAmountString = json["ikhair"]["country"].array
-                print("jsonStringAnas \(targetAmountString?.first!["-causes"]["cause"])")
-                //let ta = targetAmountString?.first!["-causes"].arrayValue
-                // print("jsonStringAnas \(ta?.first!["cause"])")
-                let collectedAmount = json["data"]["cancel"].intValue
-                let order = DonateModel(targetAmount:targetAmount , collectedAmount:collectedAmount )
-                completionHandler(order,nil)
+                let countries = json["ikhair"]["country"].array
+                let cause = countries?.first!["-causes"]["cause"]
+                let targetAmount = cause?.array?.first!["-targetAmount"].intValue
+                let collectedAmount = cause?.array?.first!["-collectedAmount"].intValue
+                let dontaionDetails = DonateModel(targetAmount:targetAmount , collectedAmount:collectedAmount )
+                completionHandler(dontaionDetails,nil)
                 
                 
             }
