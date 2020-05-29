@@ -1,0 +1,6 @@
+framework module Pods_DonateTestTaskTests {
+  umbrella header "Pods-DonateTestTaskTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
