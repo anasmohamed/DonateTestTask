@@ -2,23 +2,27 @@ PODS:
   - Alamofire (4.9.0)
   - ObjectMapper (3.5.1)
   - SwiftyJSON (5.0.0)
+  - UICircularProgressRing (6.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - ObjectMapper
   - SwiftyJSON
+  - UICircularProgressRing
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - ObjectMapper
     - SwiftyJSON
+    - UICircularProgressRing
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
 
-PODFILE CHECKSUM: 14f3b58aabdbbc8dc7203b13eb50625010a157a8
+PODFILE CHECKSUM: 6e89c3537cb679828f6968863f1e8d94cf7bab5a
 
 COCOAPODS: 1.8.4

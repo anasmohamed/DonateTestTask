@@ -17,6 +17,7 @@
 		357B7763248034DF0031ABB5 /* DonateTestTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B7762248034DF0031ABB5 /* DonateTestTaskUITests.swift */; };
 		357B7772248038E30031ABB5 /* DonateTestTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B7771248038E30031ABB5 /* DonateTestTaskRouter.swift */; };
 		357B7774248039820031ABB5 /* NetworkingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B7773248039820031ABB5 /* NetworkingConstants.swift */; };
+		3588C93924827BD40059529D /* CircularButtonExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3588C93824827BD40059529D /* CircularButtonExtenstion.swift */; };
 		35F9401A24806DC600B9C3A5 /* DonateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F9401924806DC600B9C3A5 /* DonateInteractor.swift */; };
 		35F9401C24806EA200B9C3A5 /* DonateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F9401B24806EA200B9C3A5 /* DonateModel.swift */; };
 		35F9401E24806EBB00B9C3A5 /* DonatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F9401D24806EBB00B9C3A5 /* DonatePresenter.swift */; };
@@ -62,6 +63,7 @@
 		357B7764248034DF0031ABB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357B7771248038E30031ABB5 /* DonateTestTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateTestTaskRouter.swift; sourceTree = "<group>"; };
 		357B7773248039820031ABB5 /* NetworkingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConstants.swift; sourceTree = "<group>"; };
+		3588C93824827BD40059529D /* CircularButtonExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButtonExtenstion.swift; sourceTree = "<group>"; };
 		35F9401924806DC600B9C3A5 /* DonateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateInteractor.swift; sourceTree = "<group>"; };
 		35F9401B24806EA200B9C3A5 /* DonateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateModel.swift; sourceTree = "<group>"; };
 		35F9401D24806EBB00B9C3A5 /* DonatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonatePresenter.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		357B773F248034DA0031ABB5 /* DonateTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				3588C93724827BA20059529D /* Extenstions */,
 				357B777524803D460031ABB5 /* Modules */,
 				357B7770248038B90031ABB5 /* Network */,
 				357B7740248034DA0031ABB5 /* AppDelegate.swift */,
@@ -181,6 +184,14 @@
 				35F9401624806CC200B9C3A5 /* View Controller */,
 			);
 			path = Donation;
+			sourceTree = "<group>";
+		};
+		3588C93724827BA20059529D /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				3588C93824827BD40059529D /* CircularButtonExtenstion.swift */,
+			);
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 		35F9401624806CC200B9C3A5 /* View Controller */ = {
@@ -478,6 +489,7 @@
 				35F9401E24806EBB00B9C3A5 /* DonatePresenter.swift in Sources */,
 				35F9401C24806EA200B9C3A5 /* DonateModel.swift in Sources */,
 				357B7743248034DA0031ABB5 /* SceneDelegate.swift in Sources */,
+				3588C93924827BD40059529D /* CircularButtonExtenstion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

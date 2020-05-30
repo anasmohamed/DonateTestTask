@@ -9,6 +9,8 @@ target 'DonateTestTask' do
   pod 'Alamofire', '~> 4.7'
   pod 'ObjectMapper'
   pod 'SwiftyJSON'
+  pod 'UICircularProgressRing'
+
   target 'DonateTestTaskTests' do
     inherit! :search_paths
     # Pods for testing
