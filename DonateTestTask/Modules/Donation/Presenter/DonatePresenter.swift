@@ -22,10 +22,11 @@ class DonatePresenter {
      
        
        func orderCountableByStatus() {
-           self.donateInteractor.getDonationDetails(completionHandler: {error , order in
-               print("sdsdsdsdsdsd-----------",order)
-               if order != nil {
-                   print("wwwww.....",order)
+           self.donateInteractor.getDonationDetails(completionHandler: {donate , error in
+               print("sdsdsdsdsdsd-----------",donate)
+               if donate != nil {
+                   print("wwwww.....",donate)
+                self.donateProtocol?.displayOrderData(order: donate!)
                }
                else{
                   

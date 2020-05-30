@@ -8,6 +8,8 @@
 
 import UIKit
 import UICircularProgressRing
+import Social
+
 class DonateViewController: UIViewController ,DonateProtocol{
     @IBOutlet weak var collectedMoneyLabel: UILabel!
     @IBOutlet weak var targetMoneyLabel: UILabel!
@@ -19,7 +21,8 @@ class DonateViewController: UIViewController ,DonateProtocol{
     @IBOutlet weak var amountFinishRatioCircle: UICircularProgressRing!
     
     func displayOrderData(order: DonateModel) {
-        print("order : \(order.targetAmount)")
+        collectedMoneyLabel.text = String(order.collectedAmount!)
+        targetMoneyLabel.text = String(order.targetAmount!)
     }
     
     var presenter : DonatePresenter?
@@ -33,21 +36,34 @@ class DonateViewController: UIViewController ,DonateProtocol{
         // Do anything your heart desires...
       }
         facebookBtn.circularButton()
-        facebookBtn.setImage(UIImage(named:"facebook_icon"), for: .normal)
         // Do any additional setup after loading the view.
     }
 
     @IBAction func facebookBtnDidTapped(_ sender: Any) {
+      //  SocialMediaSharingManager.shareOnFacebook(object: , from: self)
     }
     
     @IBAction func twitterBtnDidTapped(_ sender: Any) {
     }
     
     @IBAction func shareBtnDidTapped(_ sender: Any) {
+        let URLstring = String(format:"https://itunes.apple.com/in/app/facebook/id284882215?mt=8")
+        let urlToShare = URL(string:URLstring)
+        let title = "title to be shared"
+        let activityViewController = UIActivityViewController(
+            activityItems: [title,urlToShare!],
+            applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        //so that ipads won't crash
+        present(activityViewController,animated: true,completion: nil)
     }
     
     
     @IBAction func donateBtnDidTapped(_ sender: Any) {
+       let sms: String = "sms:+5115"
+        let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
+
     }
     
 }
