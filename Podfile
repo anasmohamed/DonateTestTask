@@ -7,7 +7,6 @@ target 'DonateTestTask' do
 
   # Pods for DonateTestTask
   pod 'Alamofire', '~> 4.7'
-  pod 'ObjectMapper'
   pod 'SwiftyJSON'
   pod 'UICircularProgressRing'
 

@@ -13,7 +13,7 @@ struct DonateModel : Codable {
     
         
     
-    var order: (Int, Int){
+    var details: (Int, Int){
         return (targetAmount: targetAmount!,
                 collectedAmount: collectedAmount!
                )

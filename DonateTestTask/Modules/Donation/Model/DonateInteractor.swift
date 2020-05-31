@@ -25,7 +25,7 @@ class DonateInteractor {
                 print("Request Debug Description: \(request.debugDescription)")
                 
                 print("Response Request HTTP method: \(request.httpMethod!)")
-                //                print("Response Request Content-Type: \(request.value(forHTTPHeaderField: NetworkingConstants.contentType)!)")
+               
             } else {
                 print("Response Request: nil")
             }
@@ -45,7 +45,7 @@ class DonateInteractor {
             guard let data = response.data else { return }
             do {
                 
-                let json = JSON(response.data!)
+                let json = JSON(data)
                 let countries = json["ikhair"]["country"].array
                 let cause = countries?.first!["-causes"]["cause"]
                 let targetAmount = cause?.array?.first!["-targetAmount"].intValue
