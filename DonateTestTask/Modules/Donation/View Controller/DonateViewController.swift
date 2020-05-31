@@ -35,7 +35,8 @@ class DonateViewController: UIViewController ,DonateProtocol{
         print("Done animating!")
         // Do anything your heart desires...
       }
-        facebookBtn.circularButton()
+        donateBtn.semanticContentAttribute = UIApplication.shared
+        .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
         // Do any additional setup after loading the view.
     }
 
