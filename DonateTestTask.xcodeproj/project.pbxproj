@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		354FC0612483056400A7AE08 /* SocialMediaSharingManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = 354FC0602483056400A7AE08 /* SocialMediaSharingManager .swift */; };
 		357B7741248034DA0031ABB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B7740248034DA0031ABB5 /* AppDelegate.swift */; };
 		357B7743248034DA0031ABB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B7742248034DA0031ABB5 /* SceneDelegate.swift */; };
 		357B7745248034DA0031ABB5 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357B7744248034DA0031ABB5 /* DonateViewController.swift */; };
@@ -48,7 +47,6 @@
 		0E5C0F6A8D137C55A961BB62 /* Pods_DonateTestTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonateTestTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10233B3479CDC77BA8B6A518 /* Pods_DonateTestTask_DonateTestTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonateTestTask_DonateTestTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FAD4FB5AF9EA273007944B5 /* Pods-DonateTestTask-DonateTestTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateTestTask-DonateTestTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-DonateTestTask-DonateTestTaskUITests/Pods-DonateTestTask-DonateTestTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
-		354FC0602483056400A7AE08 /* SocialMediaSharingManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SocialMediaSharingManager .swift"; sourceTree = "<group>"; };
 		357B773D248034DA0031ABB5 /* DonateTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonateTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		357B7740248034DA0031ABB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		357B7742248034DA0031ABB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,18 +106,9 @@
 		354FC05E2483053D00A7AE08 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				354FC05F2483054E00A7AE08 /* Maneger */,
 				3588C93724827BA20059529D /* Extenstions */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		354FC05F2483054E00A7AE08 /* Maneger */ = {
-			isa = PBXGroup;
-			children = (
-				354FC0602483056400A7AE08 /* SocialMediaSharingManager .swift */,
-			);
-			path = Maneger;
 			sourceTree = "<group>";
 		};
 		357B7734248034DA0031ABB5 = {
@@ -508,7 +497,6 @@
 				35F9401E24806EBB00B9C3A5 /* DonatePresenter.swift in Sources */,
 				35F9401C24806EA200B9C3A5 /* DonateModel.swift in Sources */,
 				357B7743248034DA0031ABB5 /* SceneDelegate.swift in Sources */,
-				354FC0612483056400A7AE08 /* SocialMediaSharingManager .swift in Sources */,
 				3588C93924827BD40059529D /* CircularButtonExtenstion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

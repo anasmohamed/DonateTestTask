@@ -24,8 +24,11 @@ class DonateViewController: UIViewController ,DonateProtocol{
         collectedMoneyLabel.text = String(donateModel.collectedAmount!)
         targetMoneyLabel.text = String(donateModel.targetAmount!)
         amountFinishRatioCircle.maxValue = 100
-        amountFinishRatioCircle.startProgress(to:CGFloat(donateModel.collectedAmount! / donateModel.targetAmount!) , duration: 2.0)
-              // Do anything your heart desires...
+       
+        let ratio = Float( Float(donateModel.collectedAmount!) / Float(donateModel.targetAmount!)) * 100
+        let floatRatio = CGFloat(ratio)
+        amountFinishRatioCircle.startProgress(to: floatRatio , duration: 2.0) {
+        }
     }
     
     var presenter : DonatePresenter?
@@ -33,38 +36,56 @@ class DonateViewController: UIViewController ,DonateProtocol{
         super.viewDidLoad()
         presenter = DonatePresenter(donateProtocol: self)
         presenter?.getDonationDetails()
-      
-      
+        
         donateBtn.semanticContentAttribute = UIApplication.shared
-        .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
-        // Do any additional setup after loading the view.
+            .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
     }
-
+    
     @IBAction func facebookBtnDidTapped(_ sender: Any) {
-      //  SocialMediaSharingManager.shareOnFacebook(object: , from: self)
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+            let fbShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            
+            self.present(fbShare, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func twitterBtnDidTapped(_ sender: Any) {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+            
+            let tweetShare:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            
+            self.present(tweetShare, animated: true, completion: nil)
+            
+        } else {
+            
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to tweet.", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func shareBtnDidTapped(_ sender: Any) {
-        let URLstring = String(format:"https://itunes.apple.com/in/app/facebook/id284882215?mt=8")
-        let urlToShare = URL(string:URLstring)
-        let title = "title to be shared"
-        let activityViewController = UIActivityViewController(
-            activityItems: [title,urlToShare!],
-            applicationActivities: nil)
+        let text = "This is some text that I want to share."
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
-        //so that ipads won't crash
-        present(activityViewController,animated: true,completion: nil)
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     
     @IBAction func donateBtnDidTapped(_ sender: Any) {
-       let sms: String = "sms:+5115"
+        let sms: String = "sms:5115"
         let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
-
+        
     }
     
 }

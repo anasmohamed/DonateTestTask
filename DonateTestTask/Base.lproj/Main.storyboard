@@ -72,9 +72,13 @@
                                         <rect key="frame" x="110" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="RDe-NP-nsQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="pAf-x7-FBS"/>
                                             <constraint firstAttribute="width" constant="50" id="zK4-NR-dG1"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="share_icon96"/>
+                                        <connections>
+                                            <action selector="shareBtnDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kkb-1N-5g2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -150,6 +154,7 @@
                         <outlet property="collectedMoneyLabel" destination="9Vf-vL-Xhc" id="zEL-TY-Lc7"/>
                         <outlet property="donateBtn" destination="UhK-Fk-kpz" id="Za0-ec-Yv5"/>
                         <outlet property="facebookBtn" destination="g7j-ww-5J5" id="37K-4C-o9f"/>
+                        <outlet property="shareBtn" destination="N8Q-G3-H7y" id="K3m-KV-KBj"/>
                         <outlet property="targetMoneyLabel" destination="UcD-9K-D1O" id="1DI-7w-rHr"/>
                         <outlet property="twitterBtn" destination="AUP-DE-ztv" id="NzP-6l-0Pi"/>
                     </connections>
