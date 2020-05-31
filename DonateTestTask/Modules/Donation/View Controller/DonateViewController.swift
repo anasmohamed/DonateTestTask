@@ -20,21 +20,21 @@ class DonateViewController: UIViewController ,DonateProtocol{
     @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var amountFinishRatioCircle: UICircularProgressRing!
     
-    func displayOrderData(order: DonateModel) {
-        collectedMoneyLabel.text = String(order.collectedAmount!)
-        targetMoneyLabel.text = String(order.targetAmount!)
+    func displayDonationDetails(donateModel: DonateModel) {
+        collectedMoneyLabel.text = String(donateModel.collectedAmount!)
+        targetMoneyLabel.text = String(donateModel.targetAmount!)
+        amountFinishRatioCircle.maxValue = 100
+        amountFinishRatioCircle.startProgress(to:CGFloat(donateModel.collectedAmount! / donateModel.targetAmount!) , duration: 2.0)
+              // Do anything your heart desires...
     }
     
     var presenter : DonatePresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = DonatePresenter(donateProtocol: self)
-        presenter?.orderCountableByStatus()
-        amountFinishRatioCircle.maxValue = 100
-        amountFinishRatioCircle.startProgress(to: 49, duration: 2.0) {
-        print("Done animating!")
-        // Do anything your heart desires...
-      }
+        presenter?.getDonationDetails()
+      
+      
         donateBtn.semanticContentAttribute = UIApplication.shared
         .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
         // Do any additional setup after loading the view.

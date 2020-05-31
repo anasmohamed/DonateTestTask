@@ -8,7 +8,7 @@
 
 import Foundation
 protocol DonateProtocol: NSObjectProtocol {
-    func displayOrderData(order: DonateModel)
+    func displayDonationDetails(donateModel: DonateModel)
 }
 
 class DonatePresenter {
@@ -18,20 +18,12 @@ class DonatePresenter {
            self.donateProtocol = donateProtocol
             donateInteractor = DonateInteractor()
        }
-       
-     
-       
-       func orderCountableByStatus() {
+    
+       func getDonationDetails() {
            self.donateInteractor.getDonationDetails(completionHandler: {donate , error in
-               print("sdsdsdsdsdsd-----------",donate)
                if donate != nil {
-                   print("wwwww.....",donate)
-                self.donateProtocol?.displayOrderData(order: donate!)
+                self.donateProtocol?.displayDonationDetails(donateModel: donate!)
                }
-               else{
-                  
-               }
-               
                
            })
            

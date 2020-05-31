@@ -10,7 +10,8 @@ import Foundation
 struct DonateModel : Codable {
     let targetAmount : Int?
     let collectedAmount : Int?
-   
+    
+        
     
     var order: (Int, Int){
         return (targetAmount: targetAmount!,
